@@ -1,0 +1,15 @@
+apiVersion: container/v1
+kind: StepContainer
+title: Core
+description: >
+  An Alpine Linux image with the Nebula SDK tools installed.
+sdkVersion: v1
+images:
+  base:
+    template: Dockerfile.tpl
+  python:
+    template: Dockerfile.python.tpl
+  # standalone:
+  #   template: {from: sdk, name: bash.v1/Dockerfile.standalone.tpl}
+  #   dependsOn:
+  #   - base
