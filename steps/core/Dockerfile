@@ -11,6 +11,12 @@ RUN set -eux ; \
     mv ni-v1*-linux-amd64 /usr/local/bin/ni && \
     cd - && \
     rm -fr /tmp/ni
+RUN set -eux ; \
+    wget https://github.com/puppetlabs/relay/releases/download/v4.0.5/relay-v4.0.5-linux-amd64 && \ 
+    wget https://github.com/puppetlabs/relay/releases/download/v4.0.5/relay-v4.0.5-linux-amd64.sha256 && \
+    echo $( cat relay-v4.0.5-linux-amd64.sha256 ) relay-v4.0.5-linux-amd64 | sha256sum -c - && \
+    mv relay-v4.0.5-linux-amd64 /usr/local/bin/relay && \
+    rm relay-v4.0.5-linux-amd64.sha256
 RUN apk --no-cache add bash ca-certificates curl git jq openssh && update-ca-certificates
 
 LABEL "org.opencontainers.image.title"="Core"
