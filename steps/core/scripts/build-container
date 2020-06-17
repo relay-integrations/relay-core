@@ -38,12 +38,12 @@ done
 shift $(( OPTIND - 1 ))
 
 
-$DOCKER $DOCKER_ARGS build $DOCKER_BUILD_ARGS --tag sdk.nebula.localhost/intermediate/3d15fdaec05a/core --file Dockerfile .
-$DOCKER $DOCKER_ARGS build $DOCKER_BUILD_ARGS --tag sdk.nebula.localhost/intermediate/3d15fdaec05a/core-python --file Dockerfile.python .
+$DOCKER $DOCKER_ARGS build $DOCKER_BUILD_ARGS --tag sdk.relaysh.localhost/intermediate/3d15fdaec05a/core --file Dockerfile .
+$DOCKER $DOCKER_ARGS build $DOCKER_BUILD_ARGS --tag sdk.relaysh.localhost/intermediate/3d15fdaec05a/core-python --file Dockerfile.python .
 
 for TAG in ${TAGS[@]+"${TAGS[@]}"}; do
-  $DOCKER $DOCKER_ARGS tag sdk.nebula.localhost/intermediate/3d15fdaec05a/core "projectnebula/core:${TAG}" && \
-    printf "# Tagged %s:%s\n" projectnebula/core "${TAG}"
-  $DOCKER $DOCKER_ARGS tag sdk.nebula.localhost/intermediate/3d15fdaec05a/core-python "projectnebula/core:${TAG}-python" && \
-    printf "# Tagged %s:%s\n" projectnebula/core "${TAG}-python"
+  $DOCKER $DOCKER_ARGS tag sdk.relaysh.localhost/intermediate/3d15fdaec05a/core "relaysh/core:${TAG}" && \
+    printf "# Tagged %s:%s\n" relaysh/core "${TAG}"
+  $DOCKER $DOCKER_ARGS tag sdk.relaysh.localhost/intermediate/3d15fdaec05a/core-python "relaysh/core:${TAG}-python" && \
+    printf "# Tagged %s:%s\n" relaysh/core "${TAG}-python"
 done
