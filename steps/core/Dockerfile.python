@@ -1,7 +1,7 @@
 FROM python:3-alpine
 RUN apk --no-cache add bash ca-certificates curl git jq openssh && update-ca-certificates
-RUN pip --no-cache-dir install "https://packages.nebula.puppet.net/sdk/support/python/v1/nebula_sdk-1-py3-none-any.whl"
 RUN pip --no-cache-dir install quart
+RUN pip --no-cache-dir install relay-sdk-python
 
 LABEL "org.opencontainers.image.title"="Core"
 LABEL "org.opencontainers.image.description"="An Alpine Linux image with the Nebula SDK tools installed."
