@@ -1,8 +1,8 @@
 apiVersion: integration/v1
 kind: Step
-name: template
+name: core
 version: 1
-summary: Step template
+summary: Relay core
 
 description: |
   This is a template for a simple step.
@@ -12,4 +12,4 @@ build:
   kind: Docker
 
 publish:
-  repository: relaysh/template
+  repository: relaysh/core

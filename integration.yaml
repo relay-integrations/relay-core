@@ -1,6 +1,6 @@
 apiVersion: integration/v1
 kind: Integration
-name: template
+name: relay-core
 channel: stable
 version: v20200514
 summary: Relay core
