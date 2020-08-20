@@ -5,7 +5,7 @@ version: 1
 summary: Relay core
 
 description: |
-  This is a template for a simple step.
+  Base Relay step with the Relay SDK tools installed.
 
 build:
   apiVersion: build/v1

@@ -1,6 +1,6 @@
 apiVersion: integration/v1
 kind: Integration
-name: relay-core
+name: core
 channel: stable
 version: v20200514
 summary: Relay core
@@ -9,7 +9,7 @@ homepage: https://github.com/relay-integrations/template
 source: https://github.com/relay-integrations/template
 
 description: |
-  Relay core is a library of core configuration images.
+  Relay core is a standard library of configuration images.
 
 owner:
   name: Puppet, Inc.
