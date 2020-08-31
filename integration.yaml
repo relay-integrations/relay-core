@@ -1,15 +1,15 @@
 apiVersion: integration/v1
 kind: Integration
-name: template
+name: core
 channel: stable
 version: v20200514
-summary: Integration template
+summary: Relay core
 license: Apache-2.0
 homepage: https://github.com/relay-integrations/template
 source: https://github.com/relay-integrations/template
 
 description: |
-  This is a template for creating a Relay Integration repository.
+  Relay core is a standard library of configuration images.
 
 owner:
   name: Puppet, Inc.
@@ -17,5 +17,4 @@ owner:
   url: https://puppet.com
 
 tags:
-- template
-- relay integration
+  - utilities
