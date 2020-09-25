@@ -1,3 +1,4 @@
+ARG cli=v4.2.0
 FROM alpine:latest
 RUN set -eux ; \
     mkdir -p /tmp/ni && \
@@ -10,11 +11,11 @@ RUN set -eux ; \
     cd - && \
     rm -fr /tmp/ni
 RUN set -eux ; \
-    wget https://github.com/puppetlabs/relay/releases/download/v4.1.1/relay-v4.1.1-linux-amd64 && \ 
-    wget https://github.com/puppetlabs/relay/releases/download/v4.1.1/relay-v4.1.1-linux-amd64.sha256 && \
-    echo "$( cat relay-v4.1.1-linux-amd64.sha256 )  relay-v4.1.1-linux-amd64" | sha256sum -c - && \
-    mv relay-v4.1.1-linux-amd64 /usr/local/bin/relay && chmod 755 /usr/local/bin/relay && \
-    rm relay-v4.1.1-linux-amd64.sha256
+    wget https://github.com/puppetlabs/relay/releases/download/${cli}/relay-${cli}-linux-amd64 && \ 
+    wget https://github.com/puppetlabs/relay/releases/download/${cli}/relay-${cli}-linux-amd64.sha256 && \
+    echo "$( cat relay-${cli}-linux-amd64.sha256 )  relay-${cli}-linux-amd64" | sha256sum -c - && \
+    mv relay-${cli}-linux-amd64 /usr/local/bin/relay && chmod 755 /usr/local/bin/relay && \
+    rm relay-${cli}-linux-amd64.sha256
 RUN apk --no-cache add bash ca-certificates curl git jq openssh && update-ca-certificates
 
 LABEL "org.opencontainers.image.title"="Core"
