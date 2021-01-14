@@ -1,5 +1,5 @@
 FROM alpine:latest
-ARG cli=v4.2.1
+ARG cli=v4.3.2
 RUN set -eux ; \
     mkdir -p /tmp/ni && \
     cd /tmp/ni && \
@@ -11,7 +11,7 @@ RUN set -eux ; \
     cd - && \
     rm -fr /tmp/ni
 RUN set -eux ; \
-    wget https://github.com/puppetlabs/relay/releases/download/${cli}/relay-${cli}-linux-amd64 && \ 
+    wget https://github.com/puppetlabs/relay/releases/download/${cli}/relay-${cli}-linux-amd64 && \
     wget https://github.com/puppetlabs/relay/releases/download/${cli}/relay-${cli}-linux-amd64.sha256 && \
     echo "$( cat relay-${cli}-linux-amd64.sha256 )  relay-${cli}-linux-amd64" | sha256sum -c - && \
     mv relay-${cli}-linux-amd64 /usr/local/bin/relay && chmod 755 /usr/local/bin/relay && \
