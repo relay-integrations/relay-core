@@ -1,5 +1,5 @@
 FROM alpine:latest
-ARG cli=v4.3.2
+ARG cli=v4.3.4
 RUN set -eux ; \
     mkdir -p /tmp/ni && \
     cd /tmp/ni && \

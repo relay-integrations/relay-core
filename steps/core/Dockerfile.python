@@ -1,5 +1,5 @@
 FROM python:3-alpine
-ARG cli=v4.2.1
+ARG cli=v4.3.4
 RUN set -eux ; \
    wget https://github.com/puppetlabs/relay/releases/download/${cli}/relay-${cli}-linux-amd64 && \
    wget https://github.com/puppetlabs/relay/releases/download/${cli}/relay-${cli}-linux-amd64.sha256 && \
