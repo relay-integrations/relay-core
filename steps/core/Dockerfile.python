@@ -1,5 +1,15 @@
 FROM python:3-alpine
-ARG cli=v4.3.4
+ARG cli=v4.7.0
+RUN set -eux ; \
+    mkdir -p /tmp/ni && \
+    cd /tmp/ni && \
+    wget https://packages.nebula.puppet.net/sdk/ni/v1/ni-v1-linux-amd64.tar.xz && \
+    wget https://packages.nebula.puppet.net/sdk/ni/v1/ni-v1-linux-amd64.tar.xz.sha256 && \
+    echo "$( cat ni-v1-linux-amd64.tar.xz.sha256 )  ni-v1-linux-amd64.tar.xz" | sha256sum -c - && \
+    tar -xvJf ni-v1-linux-amd64.tar.xz && \
+    mv ni-v1*-linux-amd64 /usr/local/bin/ni && \
+    cd - && \
+    rm -fr /tmp/ni
 RUN set -eux ; \
    wget https://github.com/puppetlabs/relay/releases/download/${cli}/relay-${cli}-linux-amd64 && \
    wget https://github.com/puppetlabs/relay/releases/download/${cli}/relay-${cli}-linux-amd64.sha256 && \
